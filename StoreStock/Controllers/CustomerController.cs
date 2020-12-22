@@ -9,6 +9,7 @@ using PagedList.Mvc;
 
 namespace StoreStock.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
     {
         DbMVCStockEntities3 db = new DbMVCStockEntities3();

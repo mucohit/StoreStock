@@ -31,5 +31,6 @@ namespace StoreStock.Models
         public virtual DbSet<tblEmployee> tblEmployees { get; set; }
         public virtual DbSet<tblProduct> tblProducts { get; set; }
         public virtual DbSet<tblSale> tblSales { get; set; }
+        public virtual DbSet<tblAdmin> tblAdmins { get; set; }
     }
 }

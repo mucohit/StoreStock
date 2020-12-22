@@ -140,5 +140,14 @@
       <End Role="tblProducts" EntitySet="tblProducts" />
       <End Role="tblSales" EntitySet="tblSales" />
     </AssociationSet>
+    <EntitySet Name="tblAdmins" EntityType="DbMVCStockModel.tblAdmin" />
   </EntityContainer>
+  <EntityType Name="tblAdmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

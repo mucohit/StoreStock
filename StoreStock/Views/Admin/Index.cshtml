@@ -1,0 +1,49 @@
+﻿@model StoreStock.Models.tblAdmin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Index</h2>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">New Admin</button>
+
+<div class="modal fade" id="Modal1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+
+            <div class="modal-header">
+                <h2 class="modal-title">Adding Admin Panel</h2>
+            </div>
+
+            <form method="post" action="/Admin/YeniAdmin">
+                <div class="modal-body">
+                    <label>
+                        User Name
+                    </label>
+
+                    @Html.TextBoxFor(m => m.userName, new { @class = "form-control" })
+                    <br />
+
+                    <label>
+                        Password
+                    </label>
+
+                    @Html.TextBoxFor(m => m.password, new { @class = "form-control" })
+
+                    <br />
+
+                    <button type="submit" class="btn btn-info">Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</div>
+

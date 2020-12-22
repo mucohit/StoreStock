@@ -7,8 +7,10 @@ using StoreStock.Models;
 
 namespace StoreStock.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
+
         DbMVCStockEntities3 db = new DbMVCStockEntities3();
         // GET: Category
         public ActionResult Index()

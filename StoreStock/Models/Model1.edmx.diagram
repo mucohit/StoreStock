@@ -15,6 +15,7 @@
         <AssociationConnector Association="DbMVCStockModel.FK_tblSales_tblCustomer" ManuallyRouted="false" />
         <AssociationConnector Association="DbMVCStockModel.FK_tblSales_tblEmployees" ManuallyRouted="false" />
         <AssociationConnector Association="DbMVCStockModel.FK_tblSales_tblProducts" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbMVCStockModel.tblAdmin" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

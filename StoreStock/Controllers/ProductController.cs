@@ -7,15 +7,23 @@ using StoreStock.Models;
 
 namespace StoreStock.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         DbMVCStockEntities3 db = new DbMVCStockEntities3();
 
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(string par)
         {
-            var products = db.tblProducts.Where(p=>p.Situation==true).ToList();
-            return View(products);
+            //var products = db.tblProducts.Where(p=>p.Situation==true).ToList();
+            var product = from p in db.tblProducts where p.Situation==true select p;
+            
+            if (!string.IsNullOrEmpty(par))
+            {
+                product = product.Where(p => p.Name.Contains(par) && p.Situation == true);
+            }
+
+            return View(product.ToList());
         }
 
         [HttpGet]

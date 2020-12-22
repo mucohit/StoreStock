@@ -7,6 +7,7 @@ using StoreStock.Models;
 
 namespace StoreStock.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
 

@@ -8,6 +8,7 @@ using StoreStock.Models;
 
 namespace StoreStock.Controllers
 {
+    [Authorize]
     public class SalesController : Controller
     {
         DbMVCStockEntities3 db = new DbMVCStockEntities3();
@@ -61,6 +62,7 @@ namespace StoreStock.Controllers
             var prdc = db.tblProducts.Where(p => p.Id == sale.tblProduct.Id).FirstOrDefault();
             var cust = db.tblCustomers.Where(c => c.Id == sale.tblCustomer.Id).FirstOrDefault();
             var emp = db.tblEmployees.Where(e => e.Id == sale.tblEmployee.Id).FirstOrDefault();
+
             sale.tblCustomer = cust;
             sale.tblEmployee = emp;
             sale.tblProduct = prdc;
