@@ -1,0 +1,47 @@
+﻿@using StoreStock.Models
+@model PagedList.IPagedList<tblCustomer>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Customers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Custumer ID</td>
+            <td>Name</td>
+            <td>Last Name</td>
+            <td>City</td>
+            <td>Amount</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.Name</td>
+                <td>@c.LastName</td>
+                <td>@c.City</td>
+                <td>@c.Amount</td>
+                <td><a class="btn btn-outline-warning" href="/Customer/Edit/@c.Id">Edit</a><a class="btn btn-outline-danger" href="/Customer/Delete/@c.Id">Delete</a></td>
+            </tr>
+        }
+
+    </tbody>
+
+
+</table>
+<div class="btn-toolbar" role="group" aria-label="Basic example">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, @class = "btn btn-secondary" })   )
+</div>
+<a href="/Customer/NewCustomer">New Customer</a>
+

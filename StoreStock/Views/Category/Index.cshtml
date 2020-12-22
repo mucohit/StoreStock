@@ -1,0 +1,30 @@
+﻿@using StoreStock.Models
+@model List<tblCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2 class="display-4">Category</h2>
+
+<table class="table table-bordered">
+    <tr class="table-bordered">
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
+
+    @foreach(var category in Model)
+    {
+        <tr class="table-bordered">
+            <td>@category.Id</td>
+            <td width="850px" >@category.Name</td>
+            <td>
+            <a class="btn btn-danger" style="margin-left:20px" href="/Category/Delete/@category.Id">Delete</a>
+            <a class="btn btn-warning" href="/Category/GetCategory/@category.Id">Update</a></td>
+        </tr>
+      }
+        
+</table>
+<a href="/Category/NewCategory" >New Category</a>

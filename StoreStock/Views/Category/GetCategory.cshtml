@@ -1,0 +1,17 @@
+﻿@model StoreStock.Models.tblCategory
+
+@{
+    ViewBag.Title = "GetCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Category</h2>
+
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+{
+    <h2>Update Category</h2>
+    @Html.HiddenFor(c => c.Id, new { @class = "form-control" });
+    @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+    <button class="btn btn-info" type="submit">Save</button>
+}

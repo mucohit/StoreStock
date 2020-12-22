@@ -1,0 +1,46 @@
+﻿@model StoreStock.Models.tblProduct
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+
+@using (Html.BeginForm("Edit", "Product", FormMethod.Post))
+{
+    <div class="form-group">
+        <h2>Edit Product</h2>
+
+        @Html.HiddenFor(p => p.Id, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Product Name</label>
+        @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Brand</label>
+        @Html.TextBoxFor(p => p.Brand, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        @Html.DropDownListFor(c => c.tblCategory.Id, (List<SelectListItem>)ViewBag.productCategory, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Purchase Price</label>
+        @Html.TextBoxFor(p => p.PurchasePrice, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Sales Price</label>
+        @Html.TextBoxFor(p => p.SellPrice, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Stock</label>
+        @Html.TextBoxFor(p => p.Stock, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">Save</button>
+    </div>
+    
+ }

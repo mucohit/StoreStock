@@ -1,0 +1,41 @@
+﻿@model List<tblSale>
+@using StoreStock.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Sales List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Product</td>
+            <td>Employee</td>
+            <td>Customer</td>
+            <td>Price</td>
+            <td>Date</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+       @foreach (var s in Model)
+        {
+            <tr>
+            <td>@s.Id</td>
+            <td>@s.tblProduct.Name</td>
+            <td>@s.tblEmployee.Name</td>
+            <td>@s.tblCustomer.Name @s.tblCustomer.LastName</td>
+            <td>
+                @s.Price
+            </td>
+             <td>@s.Date</td>
+              <td><a class="btn btn-outline-warning" href="/Sales/Edit/@s.Id">Edit</a><a class="btn btn-outline-danger" href="/Customer/Delete/@s.Id">Delete</a></td>
+             </tr>
+        }
+
+    </tbody>
+    <
+</table>

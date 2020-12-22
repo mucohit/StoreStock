@@ -1,0 +1,38 @@
+﻿@model StoreStock.Models.tblCustomer
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Update Customer</h2>
+
+
+@using (Html.BeginForm("Edit", "Customer", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.HiddenFor(c => c.Id, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        @Html.TextBoxFor(c => c.LastName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        @Html.TextBoxFor(c => c.City, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        <label>Amount</label>
+        @Html.TextBoxFor(c => c.Amount, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">Save</button>
+    </div>
+
+}
